@@ -1,43 +1,47 @@
 'use strict';
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('webpack').container;
-const path = require('path');
-const dependencies = require('./package.json').dependencies;
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("webpack").container;
+const dependencies = require("./package.json").dependencies;
 
 module.exports = {
-	entry: './src/index.js',
-	mode: 'development',
+	entry: "./src/index.ts",
+	mode: "development",
 	devServer: {
 		port: 3001,
-		open: true
+		open: true,
 	},
 	resolve: {
-		extensions: ['ts', 'tsx', 'js'],
+		extensions: [".ts", ".tsx", ".js"],
 	},
 	module: {
 		rules: [
 			{
-				test: /\.(js|ts|tsx)$/,
-				loader: 'ts-loader',
-				exclude: /node_modules/
-			}
+				test: /\.(js|jsx|tsx|ts)$/,
+				loader: "ts-loader",
+				exclude: /node_modules/,
+			},
 		],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './public/index.html'
+			template: "./public/index.html",
 		}),
 		new ModuleFederationPlugin({
-			name: 'counter1',
-			filename: 'remoteEntry.js',
-			'./CounterAppOne': './src/components/CounterAppOne',
+			name: "counterOne",
+			filename: "remoteEntry.js",
+			exposes: {
+				"./CounterOne": "./src/components/CounterOne",
+			},
 			shared: {
 				...dependencies,
 				react: { singleton: true, eager: true, requiredVersion: dependencies.react },
-				"react-dom": { singleton: true, eager: true, requiredVersion: dependencies['react-dom'] }
-			}
-
-		})
-	]
-}
+				"react-dom": {
+					singleton: true,
+					eager: true,
+					requiredVersion: dependencies["react-dom"],
+				},
+			},
+		}),
+	],
+};
