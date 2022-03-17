@@ -1,0 +1,23 @@
+{
+  "name": "ui-federation",
+  "workspaces": [
+    "apps/*"
+  ],
+  "author": {
+    "name": "Santiago Sanchez Taborda <santiago.sanchez.t@gmail.com>"
+  },
+  "version": "0.0.1",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
+  "engines": {
+    "node": "^14.5.5 || >= 14.0.0",
+    "yarn": ">=1.22.10",
+    "npm": "please-use-yarn"
+  }
+}
