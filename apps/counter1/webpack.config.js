@@ -9,7 +9,7 @@ module.exports = {
 	mode: "development",
 	devServer: {
 		port: 3001,
-		open: true,
+		open: false,
 	},
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"],
