@@ -4,7 +4,8 @@ import { Box, Center, Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 const CounterOne = React.lazy(() => import("counter1/CounterOne"));
 const Footer = React.lazy(() => import("./modules/Footer"));
 
-// const VERSION = process.env.BUILD_DATE;
+const BUILD_DATE: string = process.env.BUILD_DATE || "";
+const VERSION: string = process.env.VERSION || "";
 
 export default function App() {
   return (
@@ -17,16 +18,22 @@ export default function App() {
         p="0"
         flexDirection="column"
       >
-        <Box
-          color="#fff"
+        <Flex
           position="fixed"
           right="0"
           top="0"
-          mr="2rem"
-          mt="2rem"
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          color="#fff"
         >
-          Latest build date <Text>{"1.1.1"}</Text>
-        </Box>
+          <Box mr="2rem" mt="2rem">
+            Latest build date <Text>{BUILD_DATE}</Text>
+          </Box>
+          <Box mr="2rem" mt="2rem">
+            Latest version <Text>{VERSION}</Text>
+          </Box>
+        </Flex>
         <Heading color="#fff">SHELL</Heading>
         <Flex direction="row" justifyContent="space-around">
           <React.Suspense fallback={<Spinner size="xl" />}>

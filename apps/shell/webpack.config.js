@@ -2,16 +2,14 @@
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
-const ForkTypescriptChecker = require("fork-ts-checker-webpack-plugin");
-const { webpack } = require("webpack");
+const webpack = require("webpack");
 require("dotenv").config({ path: "./.env" });
 
 const dependencies = require("./package.json").dependencies;
+const version = require("./package.json").version;
 
 const buildDate = new Date().toLocaleDateString();
 module.exports = (env, argv) => {
-  // const isProduction = argv.mode === 'production';
-
   return {
     entry: "./src/index.ts",
     mode: process.env.NODE_ENV || "development",
@@ -51,10 +49,13 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
-      // new webpack.EnvironmentPlugin({ BUILD_DATE: buildDate }),
-      // new webpack.DefinePlugin({
-      //   "process.env": JSON.stringify(process.env),
-      // }),
+      new webpack.EnvironmentPlugin({
+        BUILD_DATE: buildDate,
+        VERSION: version,
+      }),
+      new webpack.DefinePlugin({
+        "process.env": JSON.stringify(process.env),
+      }),
       new HtmlWebpackPlugin({
         template: "./public/index.html",
       }),
