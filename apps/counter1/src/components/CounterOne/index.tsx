@@ -10,7 +10,7 @@ export default function CounterOne() : React.ReactElement {
 
 	return (
 		<Flex color="#000" gap="1rem" direction="column" >
-			<Text> Add by one each click <strong>Counter 1</strong></Text>
+			<Text> hello world <strong>Counter 1</strong></Text>
 			<Text>Click counter: {counter}</Text>
 			<Button onClick={clickHandler}>Click me</Button>
 		</Flex>

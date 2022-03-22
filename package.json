@@ -13,7 +13,8 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "start:dev": "lerna run start"
   },
   "engines": {
     "node": "^14.5.5 || >= 14.0.0",

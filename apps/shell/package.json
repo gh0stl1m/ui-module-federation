@@ -1,5 +1,5 @@
 {
-  "name": "@ui-federation/counter1",
+  "name": "@ui-federation/shell",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Santiago Sanchez Taborda <santiago.sanchez.t@gmail.com>",
@@ -15,29 +15,38 @@
   },
   "scripts": {
     "start": "webpack serve",
-		"build": "webpack --mode production",
-		"serve": "serve dist -p 3001",
-		"clean": "rm -rf dist"
+    "build": "webpack --mode production",
+    "serve": "serve dist -p 3000",
+    "clean": "rm -rf dist"
   },
   "bugs": {
     "url": "https://github.com/gh0stl1m/ui-module-federation/issues"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@types/react": "^17.0.40",
-    "@types/react-dom": "^17.0.13",
-    "html-webpack-plugin": "^5.5.0",
-    "serve": "^13.0.2",
-    "ts-loader": "^9.2.8",
-    "typescript": "^4.6.2",
-    "webpack": "^5.70.0",
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/node": "^15.0.3",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "babel-loader": "^8.2.3",
+    "fork-ts-checker-webpack-plugin": "^7.2.1",
+    "html-webpack-plugin": "5.3.1",
+    "react-hot-loader": "^4.13.0",
+    "serve": "11.3.2",
+    "ts-loader": "^9.1.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
+    "dotenv": "^16.0.0",
     "framer-motion": "^6.2.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
