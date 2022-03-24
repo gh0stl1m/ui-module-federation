@@ -1,0 +1,41 @@
+{
+  "name": "@ui-federation/footer",
+  "version": "1.0.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "Kevin Cruz <hi@kevfarid.dev>",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevfarid/ui-module-federation.git"
+  },
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack --mode production"
+  },
+  "bugs": {
+    "url": "https://github.com/kevfarid/ui-module-federation/issues"
+  },
+  "homepage": "https://github.com/kevfarid/ui-module-federation#readme",
+  "devDependencies": {
+    "babel-loader": "^8.2.4",
+    "html-webpack-plugin": "^5.5.0",
+    "svelte-loader": "^3.1.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "svelte": "^3.46.4"
+  }
+}
